@@ -1,17 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+import { createStackNavigator, } from 'react-navigation';
+import LoadingScreen from './src/screens/LoadingScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import BeachScreen from './src/screens/BeachScreen';
+
+
+const App = createStackNavigator({
+  'Loading': { screen: LoadingScreen },
+  'Home': { screen: HomeScreen },
+  'Beachscreen': { screen: BeachScreen },
+});
+
+
+export default App;
+
+
 
 const styles = StyleSheet.create({
   container: {
