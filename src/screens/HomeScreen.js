@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, Picker } from 'react-native';
 
 import Card from '../components/Card';
+import BeachPicker from '../components/BeachPicker';
+
+
 
 class Homecreen extends Component {
     static navigationOption = {
         title : 'Homecreen',
     }
+    
+   
+   
+
     render() {
 
         const styles = {
@@ -20,20 +27,27 @@ class Homecreen extends Component {
                 <Card 
                 title="Beaches"
                 height={550}
-                bgColor='#FFFFFF'/>
+                bgColor='#FFFFFF'
+                >
+               
+               <BeachPicker/>
+
+                </Card> 
 
                 <Button
                     className="btn"
                     title="Search Beach"
+                    color="#FFFFFF"
                     onPress={() => {
-                        this.props.navigation.navigate('Beaches')
+                        this.props.navigation.navigate('Beachscreen')
                     }}
                 >
                 </Button>
             
                 <Text>
-                    HomeScreen
+                    Home
                 </Text>
+                
             </View>
        )
    }
