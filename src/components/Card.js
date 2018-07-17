@@ -4,6 +4,7 @@ import { Text, View } from 'react-native';
 
 
 
+
 const Card = (props) => {
     const {height, bgColor, title} = props
     const styles = {
@@ -15,13 +16,13 @@ const Card = (props) => {
         }
     }
 
-
     return (
         <View
         style = {styles.mainContainer} >
-            <Text>
-                {title}
-            </Text>
+            
+                {props.children}
+            
+            
         </View>
     )
 }
