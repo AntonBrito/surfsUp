@@ -10,7 +10,7 @@ class BeachPicker extends Component {
     render() {
         return(
 
-            <Picker
+        <Picker
             selectedValue={this.state.beach}
             style={{ height: 50, width: 100 }}
             onValueChange={(itemValue, itemIndex) => this.setState({beach: itemValue})}>

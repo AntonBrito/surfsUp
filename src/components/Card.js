@@ -1,32 +1,26 @@
+import React from "react";
+import { Text, View } from "react-native";
 
-import React from 'react';
-import { Text, View } from 'react-native';
-
-
-
-
-const Card = (props) => {
-    const {height, bgColor, title} = props
-    const styles = {
-        mainContainer: {
-            height,
-            backgroundColor: bgColor,
-            margin: 10,
-            
-        }
+const Card = props => {
+  const { height, bgColor, title, width, flex, flexShrink, flexBasis } = props;
+  const styles = {
+    mainContainer: {
+      height,
+      width,
+      flex,
+      flexShrink,
+      flexBasis,
+      backgroundColor: bgColor,
+      margin: 10
     }
+  };
 
-    return (
-        <View
-        style = {styles.mainContainer} >
-            
-                {props.children}
-            
-            
-        </View>
-    )
-}
-
-
+  return (
+    <View style={styles.mainContainer}>
+      {title}
+      {props.children}
+    </View>
+  );
+};
 
 export default Card;
