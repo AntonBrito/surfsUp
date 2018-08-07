@@ -1,3 +1,5 @@
+<script src="http://192.168.1.229:8097" />;
+
 import React, { Component } from "react";
 import { Text, View, Button, Picker } from "react-native";
 
@@ -19,7 +21,7 @@ class Homecreen extends Component {
 
   componentWillMount() {
     axios
-      .get("http://magicseaweed.com/api/" + APIKEY + "/forecast/?spot_id=846")
+      .get("http://magicseaweed.com/api/ + APIKEY + /forecast/?spot_id=846")
       .then(response =>
         this.setState({
           temperature: response.data[0].condition.temperature,
@@ -40,11 +42,30 @@ class Homecreen extends Component {
       mainContainer: {
         flex: 1,
         backgroundColor: "#00c0ff"
+      },
+      headerWord: {
+        fontSize: 35,
+        color: "#FFFFFF"
       }
     };
     return (
       <View style={styles.mainContainer}>
-        <Card title="Beaches" height={550} bgColor="#FFFFFF">
+        {/* <Card height={20} bgColor="#FFFFFF">
+          <Text style={styles.headerContainer}>SurfsUp</Text>
+        </Card> */}
+        <Text style={styles.headerWord}>
+          Surfs<Text
+            style={{ color: "#02143a" }}
+            // onPress={() => {
+            //   {
+            //     this.props.navigation.navigate("Beachscreen");
+            //   }
+            // }}
+          >
+            Up
+          </Text>
+        </Text>
+        <Card title="Beaches" height={400} bgColor="#FFFFFF">
           <BeachPicker />
           <Text> {this.state.temperature} </Text>
         </Card>
@@ -59,8 +80,6 @@ class Homecreen extends Component {
             }
           }}
         />
-
-        <Text>Home </Text>
       </View>
     );
   }
